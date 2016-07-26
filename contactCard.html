@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Card</title>
+  <style>
+    .card{
+      margin: 10px;
+      height: 100px;
+      width: 175px;
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+  <script       src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+  </script>
+  <script>
+    $(document).ready(function(){
+      console.log("I'm ready");
+      $("form").on('submit', function(){
+        var fName = $("#fName").val()
+        var lName = $("#lName").val()
+        var description = $("#description").val()
+        console.log(fName, lName, description)
+
+        var html = '<div class="card" side="front" desc='+ description +' fName='+ fName +' lName ='+ lName +'>' + fName + ' ' + lName + '<p>Click for Description</p></div>'
+
+        $("#cards").append(html)
+
+        return false
+      })
+    })
+
+    $(document).on('click', '.card', function(){
+      var description = $(this).attr('desc');
+      var fName = $(this).attr('fName');
+      var lName = $(this).attr('lName');
+      var side = $(this).attr('side')
+
+      if( side === 'front'){
+
+        var back = '<div class="card" side="back" desc='+ description +' fName='+ fName +' lName ='+ lName +'><p>' + description + '</p></div>'
+
+        $(this).replaceWith(back)
+      } else {
+
+          var front = '<div class="card" side="front" desc='+ description +' fName='+ fName +' lName ='+ lName +'>' + fName + ' ' + lName + '<p>Click for Description</p></div>'
+
+          $(this).replaceWith(front)
+      }
+
+
+
+    })
+
+  </script>
+</head>
+<body>
+<div>
+  <form action="#" method="Post">
+    <p>First Name: <input type="text" name="firstName" id="fName"></p>
+    <p>Last Name: <input type="text" name="lastName" id="lName"></p>
+    <p>Decription: <textarea id="description" rows="10" cols="20"></textarea></p>
+    <input type="submit">
+  </form>
+</div>
+
+<div id="cards">
+</div>
+
+
+</body>
+</html>

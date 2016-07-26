@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>On Click</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    function buttonWrangler(){
+      $().css("background-color", "red")
+    }
+
+    $(document).ready(function(){
+      $("button").click(function(){
+        console.log("First Button Clicked")
+      })
+
+      $("#div1").on('click', 'button', function(){
+        $("#div1").append("<button>button</button>")
+        $("#div1").append("<button>button</button>")
+        buttonWrangler();
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <div id="div1">
+    <button id="button1">I AM BUTTON</button>
+  </div>
+</body>
+</html>

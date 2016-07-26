@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <style>
+    img {
+      height: 200px;
+      width: 250px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("img").hover(function(){
+      $(this).attr("src", "http://images4.fanpop.com/image/photos/23600000/-Cats-cats-23604511-1316-1061.jpg")
+    }, function(){
+        $(this).attr("src", "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg")
+    })
+  });
+  </script>
+</head>
+<body>
+  <div>
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    <img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+  </div>
+</body>
+
+
+</html>
